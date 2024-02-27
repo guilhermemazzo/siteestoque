@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <!-- social icon-->
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <li></li><img class="logo" src="https://www.palmital.sp.gov.br/img/logo_rodape.png">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaProdutos.html">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaEstoque.html">Estoques</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaDep.html">Departamentos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaSetores.html">Setores</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="TelaColaboradores.html">Colaboradores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaFornecedores.html">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaMovimentacoes.html">Movimentações</a>
+                        </li>
+                    </ul>
+        </nav>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de cadastro aqui -->
+                    <form>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control">
+                        <label for="cpf">Cpf</label>
+                        <input type="text" id="cpf" name="cpf" class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                        <label for="telefone">Telefone</label>
+                        <input type="number" id="telefone" name="telefone" class="form-control">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" class="form-control">
+                        <label for="cargo">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" class="form-control">
+                        <label for="setor">Setor</label>
+                        <input type="text" id="setor" name="setor" class="form-control">
+                        <label for="supervisor">Supervisor</label>
+                        <input type="text" id="supervisor" name="supervisor" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cadastrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="edicaoModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edição</h4>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de edição aqui -->
+                    <form>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control">
+                        <label for="cpf">Cpf</label>
+                        <input type="text" id="cpf" name="cpf" class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                        <label for="telefone">Telefone</label>
+                        <input type="number" id="telefone" name="telefone" class="form-control">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" class="form-control">
+                        <label for="cargo">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" class="form-control">
+                        <label for="setor">Setor</label>
+                        <input type="text" id="setor" name="setor" class="form-control">
+                        <label for="supervisor">Supervisor</label>
+                        <input type="text" id="supervisor" name="supervisor" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Salvar
+                        Alterações</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nome">Nome </th>
+                    <th class="cpff">Cpf</th>
+                    <th class="email">E-mail</th>
+                    <th class="tel">Telefone</th>
+                    <th class="cidade">Cidade</th>
+                    <th class="cargo">Cargo</th>
+                    <th class="setor">Setor</th>
+                    <th class="supervisor">Supervisor</th>
+                    <th class="acao">Ações</th>
+                </tr>
+            </thead>
+    </div>
+    <tbody>
+        <tr>
+            <td class="nome-1">Guilherme Augusto Mazzo de Oliveira</td>
+            <td class="cpf-1">487.***.***-90</td>
+            <td class="nome-1">gui_mazzo@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="cargo-1">Programador Junior</td>
+            <td class="setor-1">T.I</td>
+            <td class="supervisor-1">Bruno Scalla Tiroli</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Andréia Paião</td>
+            <td class="cpf-1">517.***.***-70</td>
+            <td class="nome-1">andreiapaiao@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="cargo-1">Financeiro</td>
+            <td class="setor-1">Financeiro</td>
+            <td class="supervisor-1">-----</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Adriano Augusto</td>
+            <td class="cpf-1">557.***.***-30</td>
+            <td class="nome-1">adrianoaugusto@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="cargo-1">Editor</td>
+            <td class="setor-1">Ouvidoria</td>
+            <td class="supervisor-1">-----</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Alessandro Aparecido</td>
+            <td class="cpf-1">466.***.***-94</td>
+            <td class="nome-1">alessandroaparecido@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="cargo-1">Sas</td>
+            <td class="setor-1">Sas</td>
+            <td class="supervisor-1">-----</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Thais Martins</td>
+            <td class="cpf-1">474.***.***-87</td>
+            <td class="nome-1">thaismartins@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Ibirarema - SP</td>
+            <td class="cargo-1">Recepcionista</td>
+            <td class="setor-1">Recepção</td>
+            <td class="supervisor-1">-----</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Aneliza Tonello</td>
+            <td class="cpf-1">325.***.***-56</td>
+            <td class="nome-1">anelizatonello@hotmail.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="cargo-1">Recursos humanos</td>
+            <td class="setor-1">RH</td>
+            <td class="supervisor-1">-----</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2 btn-teste" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2 btn-teste" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+
+            </table>
+            <div class="pagination">
+                <a href="#" class="prev">&laquo; Anterior</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="next">Próximo &raquo;</a>
+
+                <!-- Botão para abrir o modal -->
+                <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
+                    data-target="#cadastroModal">Cadastrar</button>
+
+            </div>
+            </div>
+            <!-- Adicione os scripts Bootstrap e jQuery antes do fechamento do corpo -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="script.js"></script>
+
+</body>
+<footer>
+    <div class="footer">
+        Prefeitura municipal de Palmital - SP - 2024
+    </div>
+</footer>
+
+</html>

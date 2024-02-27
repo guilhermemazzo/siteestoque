@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <!-- social icon-->
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <li></li><img class="logo" src="https://www.palmital.sp.gov.br/img/logo_rodape.png">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaProdutos.html">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaEstoque.html">Estoques</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaDep.html">Departamentos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaSetores.html">Setores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaColaboradores.html">Colaboradores</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="TelaFornecedores.html">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaMovimentacoes.html">Movimentações</a>
+                        </li>
+                    </ul>
+        </nav>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de cadastro aqui -->
+                    <form>
+                        <label for="nome">Razão social</label>
+                        <input type="text" id="razaoS" name="nome" class="form-control">
+                        <label for="cnpj">Cnpj</label>
+                        <input type="text" id="cnpj" name="cnpj" class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" id="tel" name="tel" class="form-control">
+                        <label for="cidade">Cidade</label>
+                        <input type="cidade" id="cidade" name="cidade" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cadastrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="edicaoModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edição</h4>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de edição aqui -->
+                    <form>
+                        <label for="nome">Razão social</label>
+                        <input type="text" id="razaoS" name="nome" class="form-control">
+                        <label for="cnpj">Cnpj</label>
+                        <input type="text" id="cnpj" name="cnpj" class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" id="tel" name="tel" class="form-control">
+                        <label for="cidade">Cidade</label>
+                        <input type="cidade" id="cidade" name="cidade" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Salvar
+                        Alterações</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <table>
+            <thead>
+                <tr>
+                    <th class="razaoS">Razão social</th>
+                    <th class="cnpj">Cnpj</th>
+                    <th class="email">E-mail</th>
+                    <th class="tel">Telefone</th>
+                    <th class="cidade">Cidade</th>
+                    <th class="acao">Ações</th>
+                </tr>
+            </thead>
+    </div>
+    <tbody>
+        <tr>
+            <td class="nome-1">Rockstar games</td>
+            <td class="cpf-1">05.570.714/0001-59</td>
+            <td class="nome-1">rockstarsandiego@rockstar.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">San Diego - CA</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Epic games</td>
+            <td class="cpf-1">25.***.***/0001-49</td>
+            <td class="nome-1">epicgames@epic.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Cary - CN</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Valve corporation</td>
+            <td class="cpf-1">52.***.***/0001-20</td>
+            <td class="nome-1">valvecorporation@valve.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Bellevue - DC</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Central Martins auto peças</td>
+            <td class="cpf-1">23.***.***/0001-15</td>
+            <td class="nome-1">centralmartins@palmital.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Palmital - SP</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Medex</td>
+            <td class="cpf-1">65.***.***/0001-22</td>
+            <td class="nome-1">medex@medex.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">São Paulo - SP</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Bosh Services</td>
+            <td class="cpf-1">56.***.***/0001-41</td>
+            <td class="nome-1">boshservices@bosh.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Goiânia - GO</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Marquespan</td>
+            <td class="cpf-1">26.***.***/0001-32</td>
+            <td class="nome-1">marquespan@marquespan.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Tatuí - SP</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Bic</td>
+            <td class="cpf-1">03.***.***/0001-29</td>
+            <td class="nome-1">bic@bic.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Uberlândia - MG</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Pctop</td>
+            <td class="cpf-1">33.***.***/0001-36</td>
+            <td class="nome-1">pctop@pctop.com</td>
+            <td class="tel-1">99799-9999</td>
+            <td class="cidade-1">Barretos - SP</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+    </tbody>
+    </table>
+    <div class="pagination">
+        <a href="#" class="prev">&laquo; Anterior</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="next">Próximo &raquo;</a>
+
+        <!-- Botão para abrir o modal -->
+        <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
+            data-target="#cadastroModal">Cadastrar</button>
+
+    </div>
+    </div>
+    <!-- Adicione os scripts Bootstrap e jQuery antes do fechamento do corpo -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <div class="footer">
+        Prefeitura municipal de Palmital - SP - 2024
+    </div>
+</footer>
+
+</html>

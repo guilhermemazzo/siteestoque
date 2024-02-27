@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <!-- social icon-->
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <li></li><img class="logo" src="https://www.palmital.sp.gov.br/img/logo_rodape.png">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaProdutos.html">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaEstoque.html">Estoques</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaDep.html">Departamentos</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="TelaSetores.html">Setores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaColaboradores.html">Colaboradores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaFornecedores.html">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaMovimentacoes.html">Movimentações</a>
+                        </li>
+                    </ul>
+        </nav>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro de setor</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="departamentoSelect">Departamento:</label>
+                        <select class="form-control" id="departamentoSelect" required>
+                            <option value="">Selecione um departamento</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educ">Educação e cultura</option>
+                            <option value="agro">Agricultura e meio ambiente</option>
+                            <option value="social">Assistência e desenvolvimento social</option>
+                            <option value="esporte">Esporte, turismo, lazer e juventude</option>
+                            <option value="adm">Administrativo</option>
+                            <option value="obras">Obras, planejamento e infraestrutura</option>
+                            <option value="cidadao">Central do cidadão</option>
+                        </select>
+                        <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
+                            Departamento.</div>
+                        <label for="setorInputName">Nome do Setor:</label>
+                        <input class="form-control" type="text" id="setorInputb" required>
+                        <button id="cadastrarBtn" class="btn2">Cadastrar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="edicaoModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edição</h4>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de edição aqui -->
+                    <form>
+                        <label for="nome">Nome do setor</label>
+                        <input type="text" id="tipo" name="setor" class="form-control">
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" onclick="verificarEdit()" class="btn btn-outline-warning">Salvar
+                                Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <table>
+            <thead>
+                <tr>
+                    <th class="descricao">Setor</th>
+                    <th class="acoes">Ações</th>
+                </tr>
+            </thead>
+    </div>
+    <tbody>
+        <tr>
+            <td class="descricao-1">Vigilância Epidemiológica</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Almoxarifado da saúde</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">PSF</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Secretária de saúde</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Centro de saúde</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Farmácia central</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Vigilância sanitária</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+        </tr>
+        <tr>
+            <td class="descricao-1">Saúde mental</td>
+            <td class="acoes">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+
+        </tr>
+
+    </tbody>
+    </table>
+    <div class="pagination">
+        <a href="#" class="prev">&laquo; Anterior</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="next">Próximo &raquo;</a>
+        <!-- Botão para abrir o modal -->
+        <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
+            data-target="#cadastroModal">Cadastrar</button>
+
+    </div>
+
+    </div>
+    <!-- Adicione os scripts Bootstrap e jQuery antes do fechamento do corpo -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <div class="footer">
+        Prefeitura municipal de Palmital - SP - 2024
+    </div>
+</footer>
+
+</html>

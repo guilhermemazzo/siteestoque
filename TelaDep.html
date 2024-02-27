@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<header>
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <!-- social icon-->
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <li></li><img class="logo" src="https://www.palmital.sp.gov.br/img/logo_rodape.png">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaProdutos.html">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaEstoque.html">Estoques</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="TelaDep.html">Departamentos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaSetores.html">Setores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaColaboradores.html">Colaboradores</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="TelaFornecedores.html">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaMovimentacoes.html">Movimentações</a>
+                        </li>
+                    </ul>
+        </nav>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de cadastro aqui -->
+                    <form>
+                        <label for="departamento">Departamento</label>
+                        <input type="text" id="departamento" name="departamento" class="form-control">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" id="descricao" name="descricao" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cadastrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="edicaoModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edição</h4>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de edição aqui -->
+                    <form>
+                        <label for="nomeEditar">Departamento</label>
+                        <input type="text" id="depEditar" name="depEditar" class="form-control">
+                        <label for="descricaoEditar">Descrição</label>
+                        <input type="text" id="descricaoeditar" name="descricaoeditar" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Salvar
+                        Alterações</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nome">Departamento</th>
+                    <th class="descricao">Descrição</th>
+                    <th class="acoes">Ações</th>
+                </tr>
+            </thead>
+    </div>
+    <tbody>
+        <tr>
+            <td class="nome-1">Saúde</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Educação e cultura</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Agricultura e meio ambiente</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Assistência e desenvolvimento social</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Esporte, turismo, lazer e juventude</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Administrativo</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Obras, planejamento e infraestrutura</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+                </div>
+            </td>
+        <tr>
+            <td class="nome-1">Central do cidadão</td>
+            <td class="descricao-1">alguma descrição</td>
+            <td class="acoes-1">
+                <div class="container_mt-0">
+                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                        data-target="#exclusaoModal">Excluir</button>
+                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                        data-target="#edicaoModal">Editar</button>
+            </td>
+
+        </tr>
+    </tbody>
+    </table>
+    <div class="pagination">
+        <a href="#" class="prev">&laquo; Anterior</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#" class="next">Próximo &raquo;</a>
+        <!-- Botão para abrir o modal -->
+        <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
+            data-target="#cadastroModal">Cadastrar</button>
+
+    </div>
+    <!-- Adicione os scripts Bootstrap e jQuery antes do fechamento do corpo -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <div class="footer">
+        Prefeitura municipal de Palmital - SP - 2024
+    </div>
+</footer>
+
+</html>
