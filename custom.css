@@ -393,8 +393,9 @@ body {
     color: white;
     text-align: center;
     width: 100vw;
-    height: 5vw;
+    height: 9vw;
     padding-top: 2vw;
+    margin-top: 10vw;
 }
 
 #openModalBtn {
