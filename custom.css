@@ -412,3 +412,15 @@ body {
     width: 50vw;
     margin-top: 15vw;
 }
+
+.tablemov {
+    align-content: center;
+    margin-left: -1vw;
+    margin-top: -6vw;
+}
+
+.btnMov {
+    margin-left: 89.3VW;
+    margin-top: 1vw;
+}
+

@@ -181,20 +181,20 @@
                         </select>
                         <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
                             Departamento.</div>
-                            <label for="departamentoSelect">Setor:</label>
-                            <select class="form-control" id="departamentoSelect" required>
-                                <option value="">Selecione um setor</option>
-                                <option value="saude">Saúde</option>
-                                <option value="educ">Educação e cultura</option>
-                                <option value="agro">Agricultura e meio ambiente</option>
-                                <option value="social">Assistência e desenvolvimento social</option>
-                                <option value="esporte">Esporte, turismo, lazer e juventude</option>
-                                <option value="adm">Administrativo</option>
-                                <option value="obras">Obras, planejamento e infraestrutura</option>
-                                <option value="cidadao">Central do cidadão</option>
-                            </select>
-                            <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
-                                Departamento.</div>
+                        <label for="departamentoSelect">Setor:</label>
+                        <select class="form-control" id="departamentoSelect" required>
+                            <option value="">Selecione um setor</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educ">Educação e cultura</option>
+                            <option value="agro">Agricultura e meio ambiente</option>
+                            <option value="social">Assistência e desenvolvimento social</option>
+                            <option value="esporte">Esporte, turismo, lazer e juventude</option>
+                            <option value="adm">Administrativo</option>
+                            <option value="obras">Obras, planejamento e infraestrutura</option>
+                            <option value="cidadao">Central do cidadão</option>
+                        </select>
+                        <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
+                            Departamento.</div>
                         <label for="armarioEdit">Solicitado por</label>
                         <input type="text" id="armarioEdit" name="armarioEdit" required class="form-control">
                         <label for="salaEdit">ID do chamado no GLPI</label>
@@ -263,6 +263,9 @@
         </div>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#estoqueModal">Ver Itens do
             Estoque</button>
+       <div class="btnAdd">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#estoqueModal">Adicionar item ao estoque</button>
+       </div>
     </div>
 
     <!-- Modal para exibir os itens do estoque -->
@@ -273,7 +276,7 @@
         </div>
         <div class="modal-body">
             <!-- Tabela de itens do estoque -->
-            <div class="info">
+            <div class="tablemov">
                 <table>
                     <thead>
                         <tr>
@@ -291,7 +294,8 @@
                     <td class="descricao-1">1TB</td>
                     <td class="acoes-1">
                         <div class="container_mt-0">
-                            <button id="darItemBtn" class="btn btn-outline-danger btn-sm ml-2" onclick="showdarModal()">Dar item</button>
+                            <button id="darItemBtn" class="btn btn-outline-danger btn-sm ml-2"
+                                onclick="showdarModal()">Dar item</button>
                             <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
                                 data-target="#edicaoModal">Emprestar item</button>
                             <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
@@ -356,11 +360,11 @@
                     <td class="acoes-1">
                         <div class="container_mt-0">
                             <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
-                            data-target="#exclusaoModal">Dar item</button>
-                        <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                            data-target="#edicaoModal">Emprestar item</button>
-                        <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
-                            data-target="#exclusaoModal">Excluir item</button>
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
                 </tr>
                 <tr>
                     <td class="tipo-1">TECLADO MECÂNICO</td>
@@ -395,11 +399,11 @@
                     <td class="acoes-1">
                         <div class="container_mt-0">
                             <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
-                            data-target="#exclusaoModal">Dar item</button>
-                        <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                            data-target="#edicaoModal">Emprestar item</button>
-                        <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
-                            data-target="#exclusaoModal">Excluir item</button>
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
                 </tr>
                 <tr>
                     <td class="tipo-1">SWITCH 24 PORTAS</td>
@@ -430,9 +434,10 @@
             </tbody>
             </table>
         </div>
-        <div class="modal-footer">
+        <div class="btnMov">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
+    </div>
     </div>
     </div>
     </div>
