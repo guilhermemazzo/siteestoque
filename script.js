@@ -118,3 +118,10 @@ document.getElementById('cadastroSetorModal').addEventListener('show.bs.modal', 
     // Aqui você pode adicionar o código para abrir o modal de cadastro de setor
     alert('Abrir modal de cadastro de setor');
 });
+
+function showdarModal() {
+  // Oculta o modal de estoque
+  $('#estoqueModal').modal('hide');
+  // Mostra o modal de edição
+  $('#darModal').modal('show');
+}

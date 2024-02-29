@@ -36,7 +36,7 @@
 
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="TelaProdutos.html">Produtos</a>
                         </li>
 
@@ -59,7 +59,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="TelaFornecedores.html">Fornecedores</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="telaMovimentacoes.html">Movimentações</a>
                         </li>
                     </ul>
@@ -153,6 +153,67 @@
 
         </div>
     </div>
+    <div class="modal" id="darModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edição</h4>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de edição aqui -->
+                    <form>
+                        <label for="departamentoSelect">Departamento:</label>
+                        <select class="form-control" id="departamentoSelect" required>
+                            <option value="">Selecione um departamento</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educ">Educação e cultura</option>
+                            <option value="agro">Agricultura e meio ambiente</option>
+                            <option value="social">Assistência e desenvolvimento social</option>
+                            <option value="esporte">Esporte, turismo, lazer e juventude</option>
+                            <option value="adm">Administrativo</option>
+                            <option value="obras">Obras, planejamento e infraestrutura</option>
+                            <option value="cidadao">Central do cidadão</option>
+                        </select>
+                        <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
+                            Departamento.</div>
+                            <label for="departamentoSelect">Setor:</label>
+                            <select class="form-control" id="departamentoSelect" required>
+                                <option value="">Selecione um setor</option>
+                                <option value="saude">Saúde</option>
+                                <option value="educ">Educação e cultura</option>
+                                <option value="agro">Agricultura e meio ambiente</option>
+                                <option value="social">Assistência e desenvolvimento social</option>
+                                <option value="esporte">Esporte, turismo, lazer e juventude</option>
+                                <option value="adm">Administrativo</option>
+                                <option value="obras">Obras, planejamento e infraestrutura</option>
+                                <option value="cidadao">Central do cidadão</option>
+                            </select>
+                            <div id="errorMsg" style="display: none;">Erro ao cadastrar! É necessário selecionar um
+                                Departamento.</div>
+                        <label for="armarioEdit">Solicitado por</label>
+                        <input type="text" id="armarioEdit" name="armarioEdit" required class="form-control">
+                        <label for="salaEdit">ID do chamado no GLPI</label>
+                        <input type="text" id="salaEdit" name="salaEdit" required class="form-control">
+                        <label for="obsEdit">Observações</label>
+                        <input type="text" id="obsEdit" name="obsEdit" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <input type="submit" value="Salvar Alterações" class="btn btn-outline-warning">
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
     <div class="containerEst">
         <h1>Movimentação de Estoque</h1>
         <div class="form-group">
@@ -207,170 +268,180 @@
     <!-- Modal para exibir os itens do estoque -->
     <div class="modal fade" id="estoqueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Itens no Estoque</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Tabela de itens do estoque -->
-                    <div class="info">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="tipo">Tipo</th>
-                                    <th class="marca">Marca</th>
-                                    <th class="descricao">Descrição</th>
-                                    <th class="acoes">Ações</th>
-                                </tr>
-                            </thead>
-                    </div>
-                    <tbody>
+        <div class="modal-dialog" role="document">
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Tabela de itens do estoque -->
+            <div class="info">
+                <table>
+                    <thead>
                         <tr>
-                            <td class="tipo-1">SSD</td>
-                            <td class="marca-1">KINGSTON</td>
-                            <td class="descricao-1">1TB</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Adicionar item</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
+                            <th class="tipo">Tipo</th>
+                            <th class="marca">Marca</th>
+                            <th class="descricao">Descrição</th>
+                            <th class="acoes">Ações</th>
                         </tr>
-                        <tr>
-                            <td class="tipo-1">SSD</td>
-                            <td class="marca-1">HUSKY</td>
-                            <td class="descricao-1">GB</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">HD</td>
-                            <td class="marca-1">WESTERN DIGITAL</td>
-                            <td class="descricao-1">4TB</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">PLACA DE VIDEO</td>
-                            <td class="marca-1">GEFORCE RTX 4090TI</td>
-                            <td class="descricao-1">24GB</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">MONITOR</td>
-                            <td class="marca-1">AOC HERO</td>
-                            <td class="descricao-1">144hz 1ms</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">TECLADO MECÂNICO</td>
-                            <td class="marca-1">CORSAIR</td>
-                            <td class="descricao-1">SWITCH RED</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">TECLADO MECÂNICO</td>
-                            <td class="marca-1">RAZER BLACKWINDOW CHROMA</td>
-                            <td class="descricao-1">SWITCH BROWN</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">UAP AC LITE</td>
-                            <td class="marca-1">UNIFI</td>
-                            <td class="descricao-1">INDOR</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">SWITCH 8 PORTAS</td>
-                            <td class="marca-1">TP LINK</td>
-                            <td class="descricao-1">GERENCIAVEL</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">SWITCH 24 PORTAS</td>
-                            <td class="marca-1">TP LINK</td>
-                            <td class="descricao-1">GERENCIAVEL</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                        <tr>
-                            <td class="tipo-1">CÂMERAS INTERNAS</td>
-                            <td class="marca-1">INTELBRAS</td>
-                            <td class="descricao-1">MIBO IM3</td>
-                            <td class="acoes-1">
-                                <div class="container_mt-0">
-                                    <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()"
-                                        data-toggle="modal" data-target="#exclusaoModal">Excluir</button>
-                                    <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                        data-target="#edicaoModal">Editar</button>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
+                    </thead>
             </div>
+            <tbody>
+                <tr>
+                    <td class="tipo-1">SSD</td>
+                    <td class="marca-1">KINGSTON</td>
+                    <td class="descricao-1">1TB</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button id="darItemBtn" class="btn btn-outline-danger btn-sm ml-2" onclick="showdarModal()">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">SSD</td>
+                    <td class="marca-1">HUSKY</td>
+                    <td class="descricao-1">GB</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">HD</td>
+                    <td class="marca-1">WESTERN DIGITAL</td>
+                    <td class="descricao-1">4TB</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">PLACA DE VIDEO</td>
+                    <td class="marca-1">GEFORCE RTX 4090TI</td>
+                    <td class="descricao-1">24GB</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">MONITOR</td>
+                    <td class="marca-1">AOC HERO</td>
+                    <td class="descricao-1">144hz 1ms</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">TECLADO MECÂNICO</td>
+                    <td class="marca-1">CORSAIR</td>
+                    <td class="descricao-1">SWITCH RED</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                            data-target="#exclusaoModal">Dar item</button>
+                        <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                            data-target="#edicaoModal">Emprestar item</button>
+                        <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                            data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">TECLADO MECÂNICO</td>
+                    <td class="marca-1">RAZER BLACKWINDOW CHROMA</td>
+                    <td class="descricao-1">SWITCH BROWN</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">UAP AC LITE</td>
+                    <td class="marca-1">UNIFI</td>
+                    <td class="descricao-1">INDOR</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">SWITCH 8 PORTAS</td>
+                    <td class="marca-1">TP LINK</td>
+                    <td class="descricao-1">GERENCIAVEL</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                            data-target="#exclusaoModal">Dar item</button>
+                        <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                            data-target="#edicaoModal">Emprestar item</button>
+                        <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                            data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">SWITCH 24 PORTAS</td>
+                    <td class="marca-1">TP LINK</td>
+                    <td class="descricao-1">GERENCIAVEL</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+                <tr>
+                    <td class="tipo-1">CÂMERAS INTERNAS</td>
+                    <td class="marca-1">INTELBRAS</td>
+                    <td class="descricao-1">MIBO IM3</td>
+                    <td class="acoes-1">
+                        <div class="container_mt-0">
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Dar item</button>
+                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
+                                data-target="#edicaoModal">Emprestar item</button>
+                            <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
+                                data-target="#exclusaoModal">Excluir item</button>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
     </div>
-
-    <!-- Modal para cadastrar novo departamento -->
-    <div class="modal fade" id="cadastroDepartamentoModal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <!-- Conteúdo do modal para cadastrar novo departamento -->
+    </div>
+    </div>
     </div>
 
-    <!-- Modal para cadastrar novo setor -->
-    <div class="modal fade" id="cadastroSetorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <!-- Conteúdo do modal para cadastrar novo setor -->
+    <div class="footer">
+        Prefeitura municipal de Palmital - SP - 2024
     </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -379,10 +450,5 @@
     <script src="script.js"></script>
 
 </body>
-<footer>
-    <div class="footermov">
-        Prefeitura municipal de Palmital - SP - 2024
-    </div>
-</footer>
 
 </html>

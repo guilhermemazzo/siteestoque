@@ -393,25 +393,17 @@ body {
     color: white;
     text-align: center;
     width: 100vw;
-    height: 9vw;
-    padding-top: 2vw;
-    margin-top: 10vw;
+    padding-top: 9vw;
+    margin-top: 3vw;
+    display: block;
+
+
+
 }
 
 #openModalBtn {
     margin-left: 66.6vw;
     border-radius: 0;
-}
-
-
-.footermov {
-    background-color: #004a80;
-    color: white;
-    text-align: center;
-    width: 100vw;
-    height: 5vw;
-    padding-top: 2vw;
-    margin-top: 21.9vw;
 }
 
 .containerEst {
