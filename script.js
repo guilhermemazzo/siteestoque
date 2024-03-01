@@ -125,3 +125,9 @@ function showdarModal() {
   // Mostra o modal de edição
   $('#darModal').modal('show');
 }
+function showemprestimoModal() {
+  // Oculta o modal de estoque
+  $('#estoqueModal').modal('hide');
+  // Mostra o modal de edição
+  $('#emprestimoModal').modal('show');
+}

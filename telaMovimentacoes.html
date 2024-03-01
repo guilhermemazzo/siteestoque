@@ -70,6 +70,74 @@
 </header>
 
 <body>
+    <div class="modal" id="emprestimoModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Formulário de empréstimo</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de cadastro aqui -->
+                    <form>
+                        <label for="local">Local</label>
+                        <input type="text" id="tipo" name="tipo" required class="form-control">
+                        <label for="solicitante">Solicitante</label>
+                        <input type="marca" id="marca" name="marca" required class="form-control">
+                        <label for="dataSaida">Data de saída</label>
+                        <input type="date" id="marca" name="marca" required class="form-control">
+                        <label for="dataSaida">Data de devolução</label>
+                        <input type="date" id="marca" name="marca" required class="form-control">
+                        <label for="patrimonio">Patrimônio</label>
+                        <input type="text" id="descricao" name="descricao" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">                            
+                    <input type="submit" value="Cadastrar" class="btn btn-outline-warning">
+                </div>
+            </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="cadastroItemEstoque">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Formulário de cadastro aqui -->
+                    <form>
+                        <label for="nome">Tipo</label>
+                        <input type="text" id="tipo" name="tipo" required class="form-control">
+                        <label for="marca">Marca</label>
+                        <input type="marca" id="marca" name="marca" required class="form-control">
+                        <label for="nome">Descrição</label>
+                        <input type="text" id="descricao" name="descricao" class="form-control">
+                        <!-- Adicione outros campos conforme necessário -->
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">                            
+                    <input type="submit" value="Cadastrar" class="btn btn-outline-warning">
+                </div>
+            </form>
+
+            </div>
+        </div>
+    </div>
     <div class="modal" id="cadastroEstoqueModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -263,9 +331,10 @@
         </div>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#estoqueModal">Ver Itens do
             Estoque</button>
-       <div class="btnAdd">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#estoqueModal">Adicionar item ao estoque</button>
-       </div>
+        <div class="btnAdd1">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroItemEstoque">Adicionar item
+                ao estoque</button>
+        </div>
     </div>
 
     <!-- Modal para exibir os itens do estoque -->
@@ -296,8 +365,8 @@
                         <div class="container_mt-0">
                             <button id="darItemBtn" class="btn btn-outline-danger btn-sm ml-2"
                                 onclick="showdarModal()">Dar item</button>
-                            <button class="btn btn-outline-warning btn-sm ml-2" data-toggle="modal"
-                                data-target="#edicaoModal">Emprestar item</button>
+                                <button id="emprestarItemBtn" class="btn btn-outline-danger btn-sm ml-2"
+                                onclick="showemprestimoModal()">Emprestar item</button>
                             <button class="btn btn-outline-danger btn-sm ml-2" onclick="delAlert()" data-toggle="modal"
                                 data-target="#exclusaoModal">Excluir item</button>
                 </tr>
@@ -443,17 +512,19 @@
     </div>
     </div>
 
-    <div class="footer">
-        Prefeitura municipal de Palmital - SP - 2024
-    </div>
-    </footer>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 
+    <div class="footerMov">
+        Prefeitura municipal de Palmital - SP - 2024
+    </div>
+    </footer>
+
 </body>
+
+
 
 </html>

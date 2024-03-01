@@ -395,9 +395,6 @@ body {
     width: 100vw;
     padding-top: 9vw;
     margin-top: 3vw;
-    display: block;
-
-
 
 }
 
@@ -410,7 +407,8 @@ body {
     display: inline-table;
     margin-left: 25vw;
     width: 50vw;
-    margin-top: 15vw;
+    margin-top: 10vw;
+
 }
 
 .tablemov {
@@ -424,3 +422,16 @@ body {
     margin-top: 1vw;
 }
 
+.btnAdd1 {
+    text-align: right;
+    margin-top: -2.5vw;
+}
+
+.footerMov {
+    background-color: #004a80;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    padding-top: 11.1vw;
+    margin-top: 3vw;
+}
