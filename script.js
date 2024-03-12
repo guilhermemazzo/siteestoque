@@ -77,35 +77,6 @@ function verificarCampos() {
 }
 
 
-// Definindo os setores para cada departamento
-const setoresPorDepartamento = {
-    'depto1': ['Secretaria de saúde', 'Centro de saúde', 'Farmácia central', 'Almoxarifado da saúde', 'PSF 1', 'PSF 2', 'PSF 3', 'PSF 4', 'PSF 5', 'Saúde mental', 'Vigilância epidemiológica', 'Vigilância sanitária'],
-    'depto2': ['Conselho tutelar', 'Cozinha piloto', 'Secretaria de educação', 'Centro cultural', 'Creche Ana Beatriz', 'EMEF Miguel Bueno', 'Creche Tutti Mama', 'EMEIEF Maria Eulália', 'EMEIEF Zezé Leão', 'EMEI Paulo Moreira', 'EMEI Prof Clóvis Barbosa', 'EMEIEF Horácio da Silva Leite', 'EMEIEF Elizabete', 'Creche Ilse Franco', 'Creche Cléa Razaboni', 'NEEP'],
-    'depto3': ['Agricultura', 'Centro de triagem animal'],
-    'depto4': ['Secretaria social', 'Cras', 'Creas', 'CCI - Ilse Ferraz', 'CCI - Paraná'],
-    'depto5': ['Esporte, turismo, lazer e juventude'],
-    'depto6': ['Financeiro', 'Compras', 'Engenharia', 'Recursos humanos', 'Área de T.I', 'Licitação', 'Serviços Jurídicos', 'Tributação e cadastro'],
-    'depto7': ['Almoxarifado do patrimônio', 'Oficina', 'Obras', 'Frotas', 'Garagem'],
-    'depto8': ['Sebrae aqui', 'PAE', 'Administração', 'Banco do povo', 'Central de empregos', 'Procon'],
-    // Adicione mais departamentos e seus setores conforme necessário
-};
-
-// Função para preencher o dropdown de setor baseado no departamento selecionado
-function popularSetores() {
-    const departamentoSelecionado = document.getElementById('departamento').value;
-    const setores = setoresPorDepartamento[departamentoSelecionado];
-    const selectSetor = document.getElementById('setor');
-    selectSetor.innerHTML = '';
-    setores.forEach(setor => {
-        const option = document.createElement('option');
-        option.text = setor;
-        selectSetor.add(option);
-    });
-}
-
-// Evento para popular os setores quando o departamento for alterado
-document.getElementById('departamento').addEventListener('change', popularEstoque);
-
 
 // Evento para abrir o modal de cadastro de departamento
 document.getElementById('cadastroEstoqueModal').addEventListener('show.bs.modal', function (event) {
@@ -130,4 +101,19 @@ function showemprestimoModal() {
   $('#estoqueModal').modal('hide');
   // Mostra o modal de edição
   $('#emprestimoModal').modal('show');
+}
+
+
+function shownovoModal() {
+  // Oculta o modal de estoque
+  $('#cadastroItemEstoque').modal('hide');
+  // Mostra o modal de edição
+  $('#novoModal').modal('open');
+}
+
+function showusadoModal() {
+  // Oculta o modal de estoque
+  $('#cadastroItemEstoque').modal('hide');
+  // Mostra o modal de edição
+  $('#usadoModal').modal('open');
 }
