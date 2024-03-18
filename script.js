@@ -117,3 +117,4 @@ function showusadoModal() {
   // Mostra o modal de edição
   $('#usadoModal').modal('open');
 }
+

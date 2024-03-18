@@ -76,7 +76,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Formulário de empréstimo</h4>
+                    <div class="empTxt">
+                        <h5 class="modal-title">FORMULÁRIO DE EMPRÉSTIMO</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -114,7 +116,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Dados fiscais</h4>
+                    <div class="dadosTxt">
+                        <h5 class="modal-title">DADOS FISCAIS</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -125,7 +129,8 @@
                         <label for="nmrnota">Número da nota: </label>
                         <input type="text" id="nmrnota" name="nmrnota" required class="form-control">
                         <label for="solicitante">Anexar nota: </label>
-                        <input type="file" id="anexarNota" name="imagem" required class="form-control">
+                        <input type="file" id="anexarNota" name="imagem" accept="application/pdf" required
+                            class="form-control">
                         <label for="nmrempenho">Número do empenho: </label>
                         <input type="text" id="nmrempenho" name="nmrempenho" required class="form-control">
                         <label for="tipo">Tipo: </label>
@@ -135,7 +140,7 @@
                         <label for="modelo">Modelo: </label>
                         <input type="text" id="modelo" name="modelo" class="form-control">
                         <label for="qtde">Quantidade: </label>
-                        <input type="number" id="qtde" name="qtde" class="form-control">
+                        <input type="number" id="qtde" name="qtde" class="form-control" min="1" max="999">
                         <label for="fornecedor">Fornecedor: </label>
                         <input type="text" id="fornecedor" name="fornecedor" class="form-control">
                         <label for="pat">Patrimônio: </label>
@@ -161,7 +166,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Equipamentos usados</h4>
+                    <div class="equiUse">
+                        <h5 class="modal-title">EQUIPAMENTOS USADOS</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -215,22 +222,27 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Cadastro de itens</h4>
+                    <div class="cadItns">
+                        <h5 class="modal-title">CADASTRO DE ITENS</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <!-- Formulário de cadastro aqui -->
-                    <button type="button" id="btnNovo" class="btn btn-primary" onclick="shownovoModal()" data-toggle="modal"
-                        data-target="#novoModal">Novo</button>
-                    <button type="button" id="btnUsado" class="btn btn-primary" onclick="showusadoModal()" data-toggle="modal"
-                        data-target="#usadoModal">Usado</button>
-                    <!-- Adicione outros campos conforme necessário -->
+                    <div class="btnCond">
+                        <button type="button" id="btnNovo" class="btn btn-primary" onclick="shownovoModal()"
+                            data-toggle="modal" data-target="#novoModal">Novo</button>
+                        <button type="button" id="btnUsado" class="btn btn-primary" onclick="showusadoModal()"
+                            data-toggle="modal" data-target="#usadoModal">Usado</button>
+                        <!-- Adicione outros campos conforme necessário -->
+                    </div>
                 </div>
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
+
                 </div>
                 </form>
 
@@ -243,7 +255,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Cadastro de estoque</h4>
+                    <div class="cadEst">
+                        <h4 class="modal-title">CADASTRO DE ESTOQUE</h4>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -270,7 +284,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Cadastro de setor</h4>
+                    <div class="cadSet">
+                        <h5 class="modal-title">CADASTRO DE SETOR</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -298,7 +314,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Cadastro de departamento</h4>
+                    <div class="cadDep">
+                        <h5 class="modal-title">CADASTRO DE DEPARTAMENTO</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -326,7 +344,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Edição</h4>
+                    <div class="darTxt">
+                        <h5 class="modal-title">DAR ITENS</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -382,7 +402,9 @@
         </div>
     </div>
     <div class="containerEst">
-        <h1>Movimentação de Estoque</h1>
+        <div class="movTxt">
+            <h3>MOVIMENTAÇÃO DE ESTOQUE</h3>
+        </div>
         <div class="form-group">
             <label for="departamento">Departamento:</label>
             <div class="input-group">
@@ -612,6 +634,7 @@
     </div>
     </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

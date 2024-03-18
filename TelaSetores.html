@@ -72,7 +72,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Cadastro de setor</h4>
+                    <div class="cadTxt1">
+                    <h5 class="modal-title">CADASTRO DE SETOR</h5>
+                </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal Body -->
@@ -94,7 +96,9 @@
                             Departamento.</div>
                         <label for="setorInputName">Nome do Setor:</label>
                         <input class="form-control" type="text" id="setorInputb" required>
-                        <button id="cadastrarBtn" class="btn2">Cadastrar</button>
+                        <div class="btnCd">
+                            <button id="cadastrarBtn" class="btn2">Cadastrar</button>
+                        </div>
 
                     </div>
                 </div>
@@ -107,7 +111,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Edição</h4>
+                    <div class="editTxt">
+                        <h5 class="modal-title">EDIÇÃO</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -119,8 +125,10 @@
                         <input type="text" id="tipo" name="setor" class="form-control">
                         <!-- Modal Footer -->
                         <div class="modal-footer">
+                            <div class="saveBtn">
                             <button type="button" onclick="verificarEdit()" class="btn btn-outline-warning">Salvar
                                 Alterações</button>
+                            </div>
                         </div>
                     </form>
                 </div>

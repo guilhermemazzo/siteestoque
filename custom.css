@@ -439,3 +439,76 @@ body {
 .btnNovo {
     text-align: center;
 }
+
+.btnCd {
+    margin-top: 3vw;
+    text-align: center;
+}
+
+.movTxt {
+    text-align: center;
+    height: 4vw;
+}
+
+.dadosTxt {
+    text-align: center;
+    margin-left: 8vw;
+}
+
+.equiUse {
+    margin-left: 5vw;
+}
+
+.cadItns {
+    margin-left: 6vw;
+}
+
+.btnCond {
+    margin-left: 8vw;
+}
+
+.darTxt {
+    text-align: center;
+    margin-left: 10vw;
+}
+
+.empTxt {
+    text-align: center;
+    margin-left: 3vw;
+}
+
+.cadTxt {
+    text-align: center;
+    margin-left: 10vw;
+}
+
+.cadTxt1 {
+    text-align: center;
+    margin-left: 6vw;
+}
+
+.editTxt {
+    text-align: center;
+    margin-left: 10vw;
+}
+
+.saveBtn {
+    margin-top: 1vw;
+    margin-right: -1vw;
+}
+
+.btnCd {
+    margin-left: 20vw;
+}
+
+.cadDep {
+    margin-left: 3vw;
+}
+
+.cadSet {
+    margin-left: 6vw;
+}
+
+.cadEst {
+    margin-left: 4vw;
+}
