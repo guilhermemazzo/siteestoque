@@ -77,8 +77,8 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <div class="cadTxt">
-                    <h5 class="modal-title">CADASTRO</h5>
-                </div>
+                        <h5 class="modal-title">CADASTRO</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -96,10 +96,10 @@
                 </div>
 
                 <!-- Modal Footer -->
-                <div class="modal-footer">                            
-                    <input type="submit" value="Cadastrar" class="btn btn-outline-warning">
+                <div class="modal-footer">
+                    <input type="submit" value="Cadastrar" onclick="verificarCampos()" class="btn btn-outline-warning">
                 </div>
-            </form>
+                </form>
 
             </div>
         </div>
@@ -111,8 +111,8 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <div class="editTxt">
-                    <h5 class="modal-title">EDIÇÃO</h5>
-                </div>
+                        <h5 class="modal-title">EDIÇÃO</h5>
+                    </div>
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -130,10 +130,11 @@
 
 
                         <!-- Modal Footer -->
-                        <div class="modal-footer">                            
+                        <div class="modal-footer">
                             <div class="saveBtn">
-                            <button type="button" onclick="verificarCampos()" class="btn btn-outline-warning">Salvar Alterações</button>
-                        </div>
+                                <button id="openModalBtn" onclick="verificarCamposs()" class="btn2 btn-primary"
+                                    data-toggle="modal" data-target="#cadastroModal">Salvar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -283,13 +284,13 @@
         <a href="#">4</a>
         <a href="#">5</a>
         <a href="#" class="next">Próximo &raquo;</a>
-      
-            <!-- Botão para abrir o modal -->
-            <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
-                data-target="#cadastroModal">Cadastrar</button>
-       
+
+        <!-- Botão para abrir o modal -->
+        <button id="openModalBtn" class="btn2 btn-primary" data-toggle="modal"
+            data-target="#cadastroModal">Cadastrar</button>
+
     </div>
-    
+
 
 
     <!-- Adicione os scripts Bootstrap e jQuery antes do fechamento do corpo -->

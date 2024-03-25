@@ -76,6 +76,38 @@ function verificarCampos() {
   }
 }
 
+function verificarCamposs() {
+  // Obter os valores dos campos
+  var tipo = document.getElementById('tipo').value;
+  var marca = document.getElementById('marca').value;
+  var descricao = document.getElementById('descricao').value;
+
+  // Verificar se os campos estão vazios
+  if (tipo.trim() === '' || marca.trim() === '' || descricao.trim() === '') {
+    Swal.fire({
+      title: "Tem certeza que deseja excluir isso?",
+      text: "O processo não poderá ser revertido!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Sim, tenho certeza!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Excluido!",
+          text: "Seu item foi excluído com sucesso.",
+          icon: "success"
+        });
+      }
+    });
+    $("#edicaoModal").modal("toggle")
+  } else {
+    // Se todos os campos estiverem preenchidos, exibir um alerta de sucesso
+    alert('Cadastro realizado com sucesso!');
+  }
+}
 
 
 // Evento para abrir o modal de cadastro de departamento
@@ -118,3 +150,49 @@ function showusadoModal() {
   $('#usadoModal').modal('open');
 }
 
+const time_to_show_login = 400;
+const time_to_hidden_login = 200;
+
+function change_to_login() {
+document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
+document.querySelector('.cont_form_login').style.display = "block";
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+
+setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },time_to_show_login);  
+  
+setTimeout(function(){    
+document.querySelector('.cont_form_sign_up').style.display = "none";
+},time_to_hidden_login);  
+  }
+
+  const time_to_show_sign_up = 100;
+  const time_to_hidden_sign_up = 400;
+
+function change_to_sign_up(at) {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+  document.querySelector('.cont_form_sign_up').style.display = "block";
+document.querySelector('.cont_form_login').style.opacity = "0";
+  
+setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
+},time_to_show_sign_up);  
+
+setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
+},time_to_hidden_sign_up);  
+
+
+}    
+
+const time_to_hidden_all = 500;
+
+function hidden_login_and_sign_up() {
+
+document.querySelector('.cont_forms').className = "cont_forms";  
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+document.querySelector('.cont_form_login').style.opacity = "0"; 
+
+setTimeout(function(){
+document.querySelector('.cont_form_sign_up').style.display = "none";
+document.querySelector('.cont_form_login').style.display = "none";
+},time_to_hidden_all);  
+  
+  }
